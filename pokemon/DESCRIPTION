@@ -1,0 +1,16 @@
+Package: pokemon
+Type: Package
+Title: Pokemon: a Demo Package for roxygen2
+Version: 0.1.0
+Authors@R: c(
+    person("Jay", "Qi", email = "jayqi.opensource@gmail.com", role = c("aut", "cre"))
+    )
+Maintainer: Jay Qi <jayqi.opensource@gmail.com>
+Description: Demo package for "Level Up Your Package's Roxygen Documentation," a
+    talk about roxygen2 advanced tricks at satRday Chicago 2019.
+Imports:
+    assertthat,
+    stringr
+License: BSD_3_clause + file LICENSE
+RoxygenNote: 6.1.1
+LazyData: true
