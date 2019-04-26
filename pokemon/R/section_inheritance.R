@@ -1,15 +1,12 @@
 #' @name Squirtle
 #' @title Squirtle Class
-#' @description R6 class for a Squirtle Pokemon.
+#' @description R6 class for a Squirtle.
 #' @section Class Constructor:
 #' \preformatted{Squirtle$new()}
 #' @section Public Methods:
 #' \describe{
-#'     \item{\bold{\code{tackle}}}{: A physical attack in which the user charges
-#'         and slams into the target with its whole body.
-#'     }
-#'     \item{\bold{\code{tail_whip}}}{: The user wags its tail cutely, making
-#'         opposing Pokemon less wary and lowering their Defense stat.
+#'     \item{\bold{\code{bubble}}}{: A spray of countless bubbles is jetted at
+#'        the opposing Pokemon.
 #'     }
 #' }
 NULL
@@ -17,8 +14,7 @@ NULL
 #' @export
 Squirtle <- R6::R6Class(
     public = list(
-        tackle = function() {.use_move("TACKLE")},
-        tail_whip = function() {.use_move("TAIL WHIP")}
+        tackle = function() {.use_move("BUBBLE")}
     ),
     private = list(
         name = "SQUIRTLE",
@@ -34,7 +30,7 @@ Squirtle <- R6::R6Class(
 
 #' @name Wartortle
 #' @title Wartortle Class
-#' @description R6 class for a Wartortle Pokemon.
+#' @description R6 class for a Wartortle.
 #' @section Class Constructor:
 #' \preformatted{Wartortle$new()}
 #' @section Public Methods:
@@ -48,6 +44,7 @@ NULL
 
 #' @export
 Wartortle <- R6::R6Class(
+    inherit = Squirtle,
     public = list(
         water_gun = function() {.use_move(private$name, "WATER GUN")}
     ),
@@ -58,7 +55,7 @@ Wartortle <- R6::R6Class(
 
 #' @name Blastoise
 #' @title Blastoise Class
-#' @description R6 class for a Blastoise Pokemon.
+#' @description R6 class for a Blastoise.
 #' @section Class Constructor:
 #' \preformatted{Blastoise$new()}
 #' @section Public Methods:
@@ -73,6 +70,7 @@ NULL
 
 #' @export
 Blastoise <- R6::R6Class(
+    inherit = Wartortle,
     public = list(
         hydro_pump = function() {.use_move(private$name, "HYDRO PUMP")}
     ),
